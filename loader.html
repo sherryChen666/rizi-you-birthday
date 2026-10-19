@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#282d2a">
+  <title>一份留给你的礼物</title>
+  <style id="gateStyle">*{box-sizing:border-box}body{min-height:100svh;margin:0;display:grid;place-items:center;background:radial-gradient(circle at 60% 35%,#3d423b,#282d2a 60%);color:#f6f1e8;font-family:"Songti SC",serif;padding:25px}.gate{width:min(340px,100%);text-align:center}.window{width:76px;height:95px;margin:0 auto 38px;background:#e8bb7b;border:8px solid #544a3d;box-shadow:0 0 65px #e1b87e88}.eyebrow{color:#c9b38d;font:10px sans-serif;letter-spacing:.25em}.gate h1{font-size:38px;font-weight:400;letter-spacing:.16em;margin:16px 0}.gate p{font-size:12px;line-height:2;color:#d8d0c0;letter-spacing:.09em}.gate form{margin-top:28px}.gate input{width:100%;height:48px;border:1px solid #9b8068;background:#f6f1e8;color:#343532;text-align:center;font-size:17px;letter-spacing:.15em}.gate button{width:100%;height:48px;margin-top:11px;border:0;background:#b59a67;color:#272b28;font-size:12px;letter-spacing:.2em;cursor:pointer}.error{min-height:22px;color:#f0b2a3!important;margin-top:10px!important}</style>
+</head>
+<body>
+  <main class="gate"><div class="window" aria-hidden="true"></div><p class="eyebrow">A GIFT FROM HOME · 2026</p><h1>日子有你</h1><p>某位先生，请输入访问密码。</p><form id="gateForm"><input id="password" type="password" autocomplete="off" aria-label="访问密码" required><button id="openBtn" type="submit">打开礼物 ↗</button></form><p class="error" id="error" role="status"></p></main>
+  <script>
+    const salt=Uint8Array.from(atob('__SALT__'),c=>c.charCodeAt(0));
+    document.getElementById('gateForm').addEventListener('submit',async event=>{
+      event.preventDefault();const password=document.getElementById('password').value;const button=document.getElementById('openBtn');const error=document.getElementById('error');button.disabled=true;button.textContent='正在打开…';error.textContent='';
+      let unlockedAudio;
+      try{
+        const Audio=window.AudioContext||window.webkitAudioContext;
+        if(Audio){unlockedAudio=new Audio();window.__birthdayAudioContext=unlockedAudio;unlockedAudio.resume().catch(()=>{})}
+        const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveKey']);
+        const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:200000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);
+        const response=await fetch('./payload.bin',{cache:'no-store'});if(!response.ok)throw Error('load');
+        const bytes=new Uint8Array(await response.arrayBuffer());
+        const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:bytes.slice(0,12)},key,bytes.slice(12));
+        const page=JSON.parse(new TextDecoder().decode(plain));
+        window.__birthdayKey=key;
+        document.title='日子有你 · 某位先生的25岁生日';
+        document.getElementById('gateStyle').remove();
+        document.body.innerHTML=page.html;
+        const style=document.createElement('style');style.textContent=page.css;document.head.appendChild(style);
+        const script=document.createElement('script');script.textContent=page.js;document.body.appendChild(script);
+      }catch{unlockedAudio?.close().catch(()=>{});window.__birthdayAudioContext=null;error.textContent='生日数字不对，请再试一次。';button.disabled=false;button.textContent='打开礼物 ↗'}
+    });
+  </script>
+</body>
+</html>

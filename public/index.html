@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f1e8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="日子有你：一份从家里寄来的生日礼物。">
+  <title>日子有你 · 某位先生的25岁生日</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar" aria-label="页面导航">
+      <button class="wordmark" id="homeBtn" type="button" aria-label="回到开场">日子有你<span> · 2026</span></button>
+      <div class="top-actions">
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="打开章节目录" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </header>
+
+    <nav class="chapter-menu" id="chapterMenu" aria-label="章节目录" hidden>
+      <p class="eyebrow">CONTENTS / 目录</p>
+      <button data-target="opening">01 <span>回家的灯</span></button>
+      <button data-target="everyday">02 <span>寻常日子</span></button>
+      <button data-target="manual">03 <span>使用说明书</span></button>
+      <button data-target="moments">04 <span>留在这里的瞬间</span></button>
+      <button data-target="letter">05 <span>给你的信</span></button>
+    </nav>
+
+    <main>
+      <section class="panel opening" id="opening" aria-labelledby="openingTitle">
+        <div class="night-scene" aria-hidden="true">
+          <div class="moon"></div><div class="ground"></div><div class="house"><div class="roof"></div><div class="house-body"><div class="window glow"><i></i></div><div class="window window-small"><i></i></div><div class="door"></div></div></div>
+          <div class="scene-light"></div>
+        </div>
+        <div class="opening-content">
+          <p class="eyebrow light">A GIFT FROM HOME · 2026</p>
+          <h1 id="openingTitle">今天，<br>有一份礼物<br>专门留给你<span>。</span></h1>
+          <p class="intro-copy">人在远方，生日也要有人好好陪你过。</p>
+          <button class="primary-cta light-cta" type="button" data-target="everyday">轻触，进来坐坐 <span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="opening-footer"><span>25岁 · 生日快乐</span><span>向下继续 <b>↓</b></span></div>
+      </section>
+
+      <section class="panel everyday" id="everyday" aria-labelledby="everydayTitle">
+        <div class="section-heading"><p class="eyebrow">CHAPTER 01 / 日常</p><h2 id="everydayTitle">那些习以为常的<br><em>小事</em>。</h2><p>一个家，大多时候没有什么惊天动地。<br>只是每样东西，都慢慢有了你的样子。</p></div>
+        <div class="room" aria-label="点击房间里的物品，读一段话">
+          <div class="room-wall"></div><div class="room-floor"></div><div class="sunbeam"></div>
+          <button class="room-object coat" data-note="suit" aria-label="查看西装的故事"><span class="coat-shape"></span><span class="object-dot">+</span></button>
+          <button class="room-object shoes" data-note="shoes" aria-label="查看皮鞋的故事"><span class="shoe-pair"><i></i><b></b></span><span class="object-dot">+</span></button>
+          <button class="room-object clock" data-note="clock" aria-label="查看时钟的故事"><span class="clock-face"><i></i><b></b></span><span class="object-dot">+</span></button>
+          <button class="room-object bag" data-note="bag" aria-label="查看购物袋的故事"><span class="bag-shape"></span><span class="object-dot">+</span></button>
+          <div class="shelf"></div><div class="console"></div><div class="table-leg left"></div><div class="table-leg right"></div>
+          <button class="room-object pot" data-note="pot" aria-label="查看锅的故事"><span class="pot-shape"></span><span class="object-dot">+</span></button>
+          <button class="room-object folder" data-note="folder" aria-label="查看文件夹的故事"><span class="folder-shape"></span><span class="object-dot">+</span></button>
+          <div class="vase"><i></i></div>
+        </div>
+        <p class="tap-hint">轻触带 <span>＋</span> 的物件</p>
+        <div class="note-card" id="noteCard" role="dialog" aria-label="日常故事" aria-modal="false" hidden><button class="close-note" id="closeNote" type="button" aria-label="关闭">×</button><p class="eyebrow" id="noteIndex"></p><h3 id="noteTitle"></h3><p id="noteText"></p></div>
+        <button class="text-next" data-target="manual" type="button">继续翻页 <span>↗</span></button>
+      </section>
+
+      <section class="panel manual" id="manual" aria-labelledby="manualTitle">
+        <div class="manual-inner">
+          <p class="eyebrow">CHAPTER 02 / 一本正经地说</p>
+          <h2 id="manualTitle">某位先生的<br><em>使用说明书</em></h2>
+          <p class="manual-sub">型号：某位先生 · 25岁限定版<br>适用范围：一个家，和家里想你的人。</p>
+          <div class="manual-card" id="manualCard" tabindex="0" role="button" aria-label="翻看使用说明书下一页"><div class="manual-card-inner"><div class="manual-page-number" id="manualPageNumber">01 / 06</div><div class="manual-mark">※</div><p class="manual-label" id="manualLabel">运行时间</p><h3 class="compact" id="manualText">每天 6:00 启动，<br>18:30 左右返回。<br>工作装四季通用，运行稳定。</h3><p class="manual-card-foot">轻触翻页 <span>→</span></p></div></div>
+          <div class="manual-dots" aria-label="说明书页码"><button class="active" data-page="0" aria-label="第1页"></button><button data-page="1" aria-label="第2页"></button><button data-page="2" aria-label="第3页"></button><button data-page="3" aria-label="第4页"></button><button data-page="4" aria-label="第5页"></button><button data-page="5" aria-label="第6页"></button></div>
+          <button class="text-next" data-target="moments" type="button">再看一点 <span>↗</span></button>
+        </div>
+      </section>
+
+      <section class="panel moments" id="moments" aria-labelledby="momentsTitle">
+        <div class="moments-intro"><p class="eyebrow">CHAPTER 03 / 照片会记得</p><h2 id="momentsTitle">把平常的日子，<br>好好收起来。</h2><p>有些画面，换个地方再看，<br>还是会想起当时的温度。</p></div>
+        <div class="photo-stack" aria-label="照片位置，可用真实家庭照片替换">
+          <figure class="photo photo-one"><div class="photo-image photo-image-one"><span>你的照片 01</span></div><figcaption>一起走过的路</figcaption></figure>
+          <figure class="photo photo-two"><div class="photo-image photo-image-two"><span>你的照片 02</span></div><figcaption>家里的某个下午</figcaption></figure>
+          <figure class="photo photo-three"><div class="photo-image photo-image-three"><span>你的照片 03</span></div><figcaption>值得记住的普通一天</figcaption></figure>
+        </div>
+        <div class="memory-player" id="memoryPlayer" hidden><div class="memory-frame"><img id="memoryImage" alt="我们的照片"></div><div class="memory-controls"><button id="memoryPrev" type="button" aria-label="上一张照片">←</button><span id="memoryCount">01 / 01</span><button id="memoryNext" type="button" aria-label="下一张照片">→</button></div><p>照片会自己慢慢翻页，也可以轻触箭头。</p></div>
+        <p class="moments-footnote">这些画面，留给真正属于我们的照片。</p>
+        <button class="text-next" data-target="letter" type="button">读最后一封信 <span>↗</span></button>
+      </section>
+
+      <section class="panel letter" id="letter" aria-labelledby="letterTitle">
+        <div class="letter-glow" aria-hidden="true"></div>
+        <p class="eyebrow light">THE LAST PAGE / 给你</p>
+        <h2 id="letterTitle">最后，<br>有封信给你。</h2>
+        <button class="envelope" id="envelope" type="button" aria-label="打开生日信" aria-expanded="false"><span class="envelope-back"></span><span class="envelope-flap"></span><span class="seal">25</span></button>
+        <article class="letter-paper" id="letterPaper" hidden><p>这些年，我们一起经历了不少事情。</p><p>从最初的小家，到今天的生活，一切都在慢慢变化。</p><p>很多话平时不会特意说，但我一直觉得，有你一起面对生活，是件很好的事。</p><p>今天你在外面，家里还是和平常一样。</p><p>等你回来，我们继续过那些普通的日子。</p><p>25岁，工作顺利，生日快乐，身体健康！</p></article>
+        <p class="letter-prompt" id="letterPrompt">轻触信封，拆开今天的祝福</p>
+        <div class="cake-moment" id="cakeMoment" hidden>
+          <p class="eyebrow light">ONE LAST WISH / 许个愿</p>
+          <p class="cake-heading">某位先生的25岁生日蜡烛，留给你来吹。</p>
+          <div class="cake-scene" id="cakeScene">
+            <button class="candle" id="candle" type="button" aria-label="轻触吹灭蜡烛"><span class="flame"></span><span class="smoke"></span><span class="wick"></span><span class="candle-body"></span></button>
+            <div class="cake-top"></div><div class="cake-base"></div><div class="cake-plate"></div>
+          </div>
+          <button class="blow-button" id="blowButton" type="button">对着蜡烛吹一口气 ↗</button>
+          <p class="cake-hint" id="cakeHint" role="status">也可以轻触烛火。</p>
+        </div>
+        <button class="restart" data-target="opening" type="button">再看一遍 ↖</button>
+      </section>
+    </main>
+    <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+    <button class="sound-fab" id="soundBtn" type="button" aria-label="关闭背景音乐" aria-pressed="true" title="关闭背景音乐"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z" fill="currentColor"/><path class="sound-wave" d="M16 8c1.4 1 2 2.3 2 4s-.6 3-2 4M18.5 5.5c2.2 1.7 3.5 3.8 3.5 6.5s-1.3 4.8-3.5 6.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="sound-slash" d="M3 3l18 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

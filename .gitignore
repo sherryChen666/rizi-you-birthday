@@ -1,0 +1,12 @@
+/build/
+/private/
+/photos/
+/media/
+/audio/samples/
+/audio/*.wav
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.heic
+.DS_Store
